@@ -12,3 +12,15 @@ def inserir_dados():
         query = "INSERT INTO inventario(nome, local, descricao, marca, data_da_compra, valor_da_compra,serie, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
         cur.execute(query, dados)
 
+# Ver dados
+def ver_dados():
+    ver_dados = []
+    with con:
+        cur = con.cursor()
+        query = "SELECT * FROM inventario ORDER BY id ASC"
+        cur.execute(query)
+
+        rows = cur.fetchall()
+        for row in rows:
+            ver_dados.append(row)
+        print(ver_dados)
