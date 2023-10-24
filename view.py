@@ -5,7 +5,7 @@ import sqlite3 as lite
 con = lite.connect("database.db")
 
 # Inserting data to database
-def inserir_dados()
+def inserir_dados():
     with con:
         dados = ['armario', 'quarto', 'comprado na casas bahia', 'Marca Y', '31/05/2000', 1600.0, 'xxxxxxxxx', 'c:imagem']
         cur = con.cursor()
