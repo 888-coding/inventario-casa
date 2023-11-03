@@ -11,6 +11,13 @@ def inserir_dados():
         cur = con.cursor()
         query = "INSERT INTO inventario(nome, local, descricao, marca, data_da_compra, valor_da_compra,serie, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
         cur.execute(query, dados)
+
+#Updating data from an id
+def atualizar_dados(i):
+    with con:
+        cur = con.cursor()
+        query = "UPDATE inventario SET nome=?, local=?, descricao=?, marca=?, data_da_compra=?, valor_da_compra=?, serie=?, imagem=? WHERE id =?"
+        cur.execute(query, i)
 def deletar_dados(i):
     with con:
         cur = con.cursor()
