@@ -35,4 +35,5 @@ def ver_dados():
         rows = cur.fetchall()
         for row in rows:
             ver_dados.append(row)
-        print(ver_dados)
+    return ver_dados
+
