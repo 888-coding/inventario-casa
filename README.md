@@ -27,3 +27,7 @@ Para os dados puxados pelo query, tem que criar um variável array, e grava no a
         variavel_array.append(row)
 
 O comando 'fetchall()' significa trazer tudo.
+
+Aprendizado 4:
+
+Aprendi que dentro de um def (função), quando tem a função de mostrar, tem que ter o 'return'
