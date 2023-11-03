@@ -11,6 +11,11 @@ def inserir_dados():
         cur = con.cursor()
         query = "INSERT INTO inventario(nome, local, descricao, marca, data_da_compra, valor_da_compra,serie, imagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
         cur.execute(query, dados)
+def deletar_dados(i):
+    with con:
+        cur = con.cursor()
+        query = "DELETE FROM inventario WHERE id=?"
+        cur.execute(query,i)
 
 # Ver dados
 def ver_dados():
