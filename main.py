@@ -8,16 +8,16 @@ from tkinter import Tk, StringVar, ttk
 from PIL import Image, ImageTk
 
 # Cores
-co0 = "#2e2d2b" # preta
-co1 = "#feffff" # branca
-co2 = "#4fa882" # verde
-co3 = "#38576b" # valor
-co4 = "#403d3d" # letra
-co5 = "#e06636" # - profit
-co6 = "#038cfc" #azul
-co7 = "#3fbfb9" # verde
-co8 = "#263238" # + verde
-co9 = "#e9edf5" # - verde
+co0 = "#2e2d2b"  # preta
+co1 = "#feffff"  # branca
+co2 = "#4fa882"  # verde
+co3 = "#38576b"  # valor
+co4 = "#403d3d"  # letra
+co5 = "#e06636"  # - profit
+co6 = "#038cfc"  # azul
+co7 = "#3fbfb9"  # verde
+co8 = "#263238"  # + verde
+co9 = "#e9edf5"  # - verde
 
 # Criando Janela
 janela = Tk()
