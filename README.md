@@ -31,3 +31,17 @@ O comando 'fetchall()' significa trazer tudo.
 Aprendizado 4:
 
 Aprendi que dentro de um def (função), quando tem a função de mostrar, tem que ter o 'return'
+
+Aprendizado 5:
+
+Para criar o aplicativo de programa em Python, deve-se usar a biblioteca "tkinter".
+
+    from tkinter import *
+    from tkinter import Tk, StringVar, ttk
+
+Aprendizado 6:
+
+Para mexer com imagens no programa em Python, deve-se usar a biblioteca "pillow", ou "PIL".
+
+    from PIL import Image, ImageTk
+
