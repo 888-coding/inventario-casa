@@ -5,7 +5,7 @@
 from tkinter import *
 from tkinter import Tk, StringVar, ttk
 
-##  Pillow
+##  Importando Pillow
 from PIL import Image, ImageTk
 
 ## Importando Tkcalendar
