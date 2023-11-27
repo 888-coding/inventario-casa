@@ -5,7 +5,12 @@
 from tkinter import *
 from tkinter import Tk, StringVar, ttk
 
+##  Pillow
 from PIL import Image, ImageTk
+
+## Importando Tkcalendar
+from tkcalendar import Calendar, DateEntry
+from datetime import date
 
 # Cores
 co0 = "#2e2d2b"  # preta
