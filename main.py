@@ -92,7 +92,7 @@ l_serial.place(x=10, y=190)
 e_serial = Entry(frameMeio, width=30, justify='left', relief=SOLID)
 e_serial.place(x=130,y=191)
 
-# Criando botoes
+# Criando botoes =========================================
 
 # Botao carregar
 l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
@@ -127,5 +127,15 @@ img_item = img_item.resize((20,20))
 img_item = ImageTk.PhotoImage(img_item)
 b_item = Button(frameMeio, image=img_item, width=95, text='  Ver item'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_item.place(x=330, y=221)
+
+# Labels : Quantidade total e Valores ================================
+
+l_total = Label(frameMeio, text='', width=14, height=2, anchor=CENTER, font=('Ivy 17 bold'), bg=co7, fg=co1)
+l_total.place(x=450, y=17)
+
+l_total_ = Label(frameMeio, text='  Valor total de todos os itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
+l_total_.place(x=450, y=12)
+
+
 
 janela.mainloop()
