@@ -97,7 +97,7 @@ e_serial.place(x=130,y=191)
 # Botao carregar
 l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
 l_carregar.place(x=10, y=220)
-b_carregar = Button(frameMeio, width=30, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_carregar = Button(frameMeio, width=29, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_carregar.place(x=130, y=221)
 
 # Botao inserir
@@ -120,5 +120,12 @@ img_delete = img_delete.resize((20,20))
 img_delete = ImageTk.PhotoImage(img_delete)
 b_delete = Button(frameMeio, image=img_delete, width=95, text='  Delete'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_delete.place(x=330, y=90)
+
+# Botao Ver Imagem
+img_item = Image.open('item.png')
+img_item = img_item.resize((20,20))
+img_item = ImageTk.PhotoImage(img_item)
+b_item = Button(frameMeio, image=img_item, width=95, text='  Ver item'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_item.place(x=330, y=221)
 
 janela.mainloop()
