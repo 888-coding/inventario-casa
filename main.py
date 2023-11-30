@@ -92,5 +92,26 @@ l_serial.place(x=10, y=190)
 e_serial = Entry(frameMeio, width=30, justify='left', relief=SOLID)
 e_serial.place(x=130,y=191)
 
+# Criando botoes
+
+# Botao carregar
+l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+l_carregar.place(x=10, y=220)
+b_carregar = Button(frameMeio, width=30, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_carregar.place(x=130, y=221)
+
+# Botao inserir
+img_add = Image.open('add.png')
+img_add = img_add.resize((20,20))
+img_add = ImageTk.PhotoImage(img_add)
+b_inserir = Button(frameMeio, image=img_add, width=95, text='  Adicionar'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_inserir.place(x=330, y=10)
+
+# Botao atualizar
+img_update = Image.open('update.jpg')
+img_update = img_update.resize((20,20))
+img_update = ImageTk.PhotoImage(img_update)
+b_update = Button(frameMeio, image=img_update, width=95, text='  Atualizar'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_update.place(x=330, y=50)
 
 janela.mainloop()
