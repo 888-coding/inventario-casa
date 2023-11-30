@@ -132,10 +132,12 @@ b_item.place(x=330, y=221)
 
 l_total = Label(frameMeio, text='', width=14, height=2, anchor=CENTER, font=('Ivy 17 bold'), bg=co7, fg=co1)
 l_total.place(x=450, y=17)
-
 l_total_ = Label(frameMeio, text='  Valor total de todos os itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
 l_total_.place(x=450, y=12)
 
-
+l_qtd = Label(frameMeio, text='', width=14, height=2, anchor=CENTER, font=('Ivy 17 bold'), bg=co7, fg=co1)
+l_qtd.place(x=450, y=90)
+l_qtd_ = Label(frameMeio, text='  Quantidade total de itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
+l_qtd_.place(x=450, y=92)
 
 janela.mainloop()
