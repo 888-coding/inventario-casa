@@ -114,4 +114,11 @@ img_update = ImageTk.PhotoImage(img_update)
 b_update = Button(frameMeio, image=img_update, width=95, text='  Atualizar'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_update.place(x=330, y=50)
 
+# Botao deletar
+img_delete = Image.open('delete.png')
+img_delete = img_delete.resize((20,20))
+img_delete = ImageTk.PhotoImage(img_delete)
+b_delete = Button(frameMeio, image=img_delete, width=95, text='  Delete'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_delete.place(x=330, y=90)
+
 janela.mainloop()
