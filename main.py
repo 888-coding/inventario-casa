@@ -140,4 +140,59 @@ l_qtd.place(x=450, y=90)
 l_qtd_ = Label(frameMeio, text='  Quantidade total de itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
 l_qtd_.place(x=450, y=92)
 
+
+# tabela -----------------------------------------------------------
+
+# creating a treeview with dual scrollbars
+tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Data da compra','Valor da compra', 'Número de série']
+
+lista_itens = []
+
+global tree
+
+tree = ttk.Treeview(frameBaixo, selectmode="extended",columns=tabela_head, show="headings")
+
+# vertical scrollbar
+vsb = ttk.Scrollbar(frameBaixo, orient="vertical", command=tree.yview)
+
+# horizontal scrollbar
+hsb = ttk.Scrollbar(frameBaixo, orient="horizontal", command=tree.xview)
+
+tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
+tree.grid(column=0, row=0, sticky='nsew')
+vsb.grid(column=1, row=0, sticky='ns')
+hsb.grid(column=0, row=1, sticky='ew')
+frameBaixo.grid_rowconfigure(0, weight=12)
+
+hd=["center","center","center","center","center","center","center", 'center']
+h=[40,150,100,160,130,100,100, 100]
+n=0
+
+for col in tabela_head:
+    tree.heading(col, text=col.title(), anchor=CENTER)
+    adjust the column's width to the header string
+    tree.column(col, width=h[n],anchor=hd[n])
+    n+=1
+
+
+# inserindo os itens dentro da tabela
+for item in lista_itens:
+    tree.insert('', 'end', values=item)
+
+
+quantidade = [8888,88]
+
+for iten in lista_itens:
+    quantidade.append(iten[6])
+
+Total_valor = sum(quantidade)
+Total_itens = len(quantidade)
+
+l_total['text'] = 'R$ {:,.2f}'.format(Total_valor)
+l_qtd['text'] = Total_itens
+
+
+
+
+
 janela.mainloop()
