@@ -135,7 +135,7 @@ l_total.place(x=450, y=17)
 l_total_ = Label(frameMeio, text='  Valor total de todos os itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
 l_total_.place(x=450, y=12)
 
-l_qtd = Label(frameMeio, text='', width=14, height=2, anchor=CENTER, font=('Ivy 17 bold'), bg=co7, fg=co1)
+l_qtd = Label(frameMeio, text='', width=14, height=2, pady=6, anchor=CENTER, font=('Ivy 17 bold'), bg=co7, fg=co1)
 l_qtd.place(x=450, y=90)
 l_qtd_ = Label(frameMeio, text='  Quantidade total de itens:  ', height=1,anchor=NW, font=('Ivy 10 bold'), bg=co7, fg=co1)
 l_qtd_.place(x=450, y=92)
@@ -170,7 +170,7 @@ n=0
 
 for col in tabela_head:
     tree.heading(col, text=col.title(), anchor=CENTER)
-    adjust the column's width to the header string
+    # adjust the column's width to the header string
     tree.column(col, width=h[n],anchor=hd[n])
     n+=1
 
