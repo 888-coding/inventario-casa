@@ -3,8 +3,7 @@
 
 # Importar bibliotecas
 from tkinter import *
-from tkinter import Tk, StringVar, ttk
-
+from tkinter import Tk, StringVar, ttk, messagebox
 ##  Importando Pillow
 from PIL import Image, ImageTk
 
@@ -44,6 +43,30 @@ frameMeio.grid(row=1, column=0, pady=1, padx=0, sticky=NSEW)
 
 frameBaixo = Frame(janela, width=1043, height=300, bg=co1, relief=FLAT)
 frameBaixo.grid(row=2, column=0, pady=1, padx=0, stick=NSEW)
+
+# Criando funções ============================================
+
+global tree
+
+# Função inserir
+def inserir():
+    global imagem, imagem_string, l_imagem
+    nome = e_nome.get()
+    local = e_local.get()
+    descricao = e_descricao.get()
+    modelo = e_modelo.get()
+    data = e_cal.get()
+    valor = e_valor.get()
+    serie = e_serial.get()
+    imagem = imagem_string
+
+    lista_inserir = [nome, local, descricao, modelo, data, valor, serie, imagem]
+
+    for i in lista_inserir:
+        if i == '':
+            messagebox.showerror('Erro', 'Preencha todos os campos')
+            return
+        
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
@@ -148,7 +171,7 @@ tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Dat
 
 lista_itens = []
 
-global tree
+
 
 tree = ttk.Treeview(frameBaixo, selectmode="extended",columns=tabela_head, show="headings")
 
