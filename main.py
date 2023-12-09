@@ -58,7 +58,7 @@ def inserir():
     data = e_cal.get()
     valor = e_valor.get()
     serie = e_serial.get()
-    imagem = imagem_string
+    imagem: object = imagem_string
 
     lista_inserir = [nome, local, descricao, modelo, data, valor, serie, imagem]
 
