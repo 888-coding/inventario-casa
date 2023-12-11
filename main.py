@@ -83,6 +83,8 @@ def inserir():
     valor.delete(0, 'end')
     serie.delete(0, 'end')
 
+
+
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
 app_img = Image.open('inventario.png')
