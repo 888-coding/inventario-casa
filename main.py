@@ -1,7 +1,7 @@
 # Main
 # Trabalhar com grafica
 
-# Importar bibliotecas
+# Importar bibliotecas ----------------------------------------------
 from tkinter import *
 from tkinter import Tk, StringVar, ttk, messagebox
 ##  Importando Pillow
@@ -10,6 +10,10 @@ from PIL import Image, ImageTk
 ## Importando Tkcalendar
 from tkcalendar import Calendar, DateEntry
 from datetime import date
+
+# Importando view
+from view import *
+
 
 # Cores
 co0 = "#2e2d2b"  # preta
@@ -67,6 +71,17 @@ def inserir():
             messagebox.showerror('Erro', 'Preencha todos os campos')
             return
         
+    inserir_dados(lista_inserir)
+
+    messagebox.showinfo('Sucesso','Os dados foram inseridos com sucesso')
+
+    nome.delete(0, 'end')
+    local.delete(0, 'end')
+    descricao.delete(0, 'end')
+    modelo.delete(0, 'end')
+    data.delete(0, 'end')
+    valor.delete(0, 'end')
+    serie.delete(0, 'end')
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
