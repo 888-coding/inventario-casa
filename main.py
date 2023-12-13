@@ -54,34 +54,9 @@ global tree
 
 # Função inserir
 def inserir():
-    global imagem, imagem_string, l_imagem
-    nome = e_nome.get()
-    local = e_local.get()
-    descricao = e_descricao.get()
-    modelo = e_modelo.get()
-    data = e_cal.get()
-    valor = e_valor.get()
-    serie = e_serial.get()
-    imagem: object = imagem_string
 
-    lista_inserir = [nome, local, descricao, modelo, data, valor, serie, imagem]
 
-    for i in lista_inserir:
-        if i == '':
-            messagebox.showerror('Erro', 'Preencha todos os campos')
-            return
-        
-    inserir_dados(lista_inserir)
 
-    messagebox.showinfo('Sucesso','Os dados foram inseridos com sucesso')
-
-    nome.delete(0, 'end')
-    local.delete(0, 'end')
-    descricao.delete(0, 'end')
-    modelo.delete(0, 'end')
-    data.delete(0, 'end')
-    valor.delete(0, 'end')
-    serie.delete(0, 'end')
 
 
 
@@ -183,56 +158,60 @@ l_qtd_.place(x=450, y=92)
 
 # tabela -----------------------------------------------------------
 
-# creating a treeview with dual scrollbars
-tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Data da compra','Valor da compra', 'Número de série']
-
-lista_itens = []
+def mostrar():
 
 
 
-tree = ttk.Treeview(frameBaixo, selectmode="extended",columns=tabela_head, show="headings")
+    # creating a treeview with dual scrollbars
+    tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Data da compra','Valor da compra', 'Número de série']
 
-# vertical scrollbar
-vsb = ttk.Scrollbar(frameBaixo, orient="vertical", command=tree.yview)
-
-# horizontal scrollbar
-hsb = ttk.Scrollbar(frameBaixo, orient="horizontal", command=tree.xview)
-
-tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
-tree.grid(column=0, row=0, sticky='nsew')
-vsb.grid(column=1, row=0, sticky='ns')
-hsb.grid(column=0, row=1, sticky='ew')
-frameBaixo.grid_rowconfigure(0, weight=12)
-
-hd=["center","center","center","center","center","center","center", 'center']
-h=[40,150,100,160,130,100,100, 100]
-n=0
-
-for col in tabela_head:
-    tree.heading(col, text=col.title(), anchor=CENTER)
-    # adjust the column's width to the header string
-    tree.column(col, width=h[n],anchor=hd[n])
-    n+=1
-
-
-# inserindo os itens dentro da tabela
-for item in lista_itens:
-    tree.insert('', 'end', values=item)
-
-
-quantidade = [8888,88]
-
-for iten in lista_itens:
-    quantidade.append(iten[6])
-
-Total_valor = sum(quantidade)
-Total_itens = len(quantidade)
-
-l_total['text'] = 'R$ {:,.2f}'.format(Total_valor)
-l_qtd['text'] = Total_itens
+    lista_itens = []
 
 
 
+    tree = ttk.Treeview(frameBaixo, selectmode="extended",columns=tabela_head, show="headings")
+
+    # vertical scrollbar
+    vsb = ttk.Scrollbar(frameBaixo, orient="vertical", command=tree.yview)
+
+    # horizontal scrollbar
+    hsb = ttk.Scrollbar(frameBaixo, orient="horizontal", command=tree.xview)
+
+    tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
+    tree.grid(column=0, row=0, sticky='nsew')
+    vsb.grid(column=1, row=0, sticky='ns')
+    hsb.grid(column=0, row=1, sticky='ew')
+    frameBaixo.grid_rowconfigure(0, weight=12)
+
+    hd=["center","center","center","center","center","center","center", 'center']
+    h=[40,150,100,160,130,100,100, 100]
+    n=0
+
+    for col in tabela_head:
+        tree.heading(col, text=col.title(), anchor=CENTER)
+        # adjust the column's width to the header string
+        tree.column(col, width=h[n],anchor=hd[n])
+        n+=1
+
+
+    # inserindo os itens dentro da tabela
+    for item in lista_itens:
+        tree.insert('', 'end', values=item)
+
+
+    quantidade = [8888,88]
+
+    for iten in lista_itens:
+        quantidade.append(iten[6])
+
+    Total_valor = sum(quantidade)
+    Total_itens = len(quantidade)
+
+    l_total['text'] = 'R$ {:,.2f}'.format(Total_valor)
+    l_qtd['text'] = Total_itens
+
+
+mostrar()
 
 
 janela.mainloop()
