@@ -4,6 +4,8 @@
 # Importar bibliotecas ----------------------------------------------
 from tkinter import *
 from tkinter import Tk, StringVar, ttk, messagebox
+from tkinter import filedialog as fd
+
 ##  Importando Pillow
 from PIL import Image, ImageTk
 
@@ -50,10 +52,43 @@ frameBaixo.grid(row=2, column=0, pady=1, padx=0, stick=NSEW)
 
 # Criando funções ============================================
 global tree
-
+global imagem, imagem_string, l_imagem
 # Função inserir
 def inserir():
-    global imagem, imagem_string, l_imagem
+    nome = e_nome.get()
+    local = e_local.get()
+    descricao = e_descricao.get()
+    modelo = e_modelo.get()
+    data = e_cal.get()
+    valor = e_valor.get()
+    serie = e_serial.get()
+    imagem = imagem_string
+
+    lista_inserir = [nome, local, descricao, modelo, data, valor, serie, imagem]
+
+    for i in lista_inserir:
+        if i == '':
+            messagebox.showerror('Erro', 'Preencha todos os campos')
+            return
+
+    inserir_dados(lista_inserir)
+
+    messagebox.showinfo('Sucesso', 'Os dados foram inseridos com sucesso')
+
+    nome.delete(0, 'end')
+    local.delete(0, 'end')
+    descricao.delete(0, 'end')
+    modelo.delete(0, 'end')
+    data.delete(0, 'end')
+    valor.delete(0, 'end')
+    serie.delete(0, 'end')
+
+    for widget in frameMeio.winfo_children():
+        widget.destroy()
+
+
+# Função para escolher imagem
+def escolher_imagem():
 
 
 
@@ -89,17 +124,17 @@ l_modelo.place(x=10, y=100)
 e_modelo = Entry(frameMeio, width=30, justify='left', relief=SOLID)
 e_modelo.place(x=130,y=101)
 
-l_cal = Label(frameMeio, text='Data da compra', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+l_cal = Label(frameMeio, text='Data da compra', anchor=NW, font='Ivy 10 bold', bg=co1, fg=co4)
 l_cal.place(x=10, y=130)
 e_cal = DateEntry(frameMeio, width=12, background='darkblue',bordwidth=2, year=2023)
 e_cal.place(x=130,y=131)
 
-l_valor = Label(frameMeio, text='Valor da compra', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+l_valor = Label(frameMeio, text='Valor da compra', anchor=NW, font='Ivy 10 bold', bg=co1, fg=co4)
 l_valor.place(x=10, y=160)
 e_valor = Entry(frameMeio, width=30, justify='left', relief=SOLID)
 e_valor.place(x=130,y=161)
 
-l_serial = Label(frameMeio, text='Número de série', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+l_serial = Label(frameMeio, text='Número de série', anchor=NW, font='Ivy 10 bold', bg=co1, fg=co4)
 l_serial.place(x=10, y=190)
 e_serial = Entry(frameMeio, width=30, justify='left', relief=SOLID)
 e_serial.place(x=130,y=191)
@@ -107,7 +142,7 @@ e_serial.place(x=130,y=191)
 # Criando botoes =========================================
 
 # Botao carregar
-l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font=('Ivy 10 bold'), bg=co1, fg=co4)
+l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font='Ivy 10 bold', bg=co1, fg=co4)
 l_carregar.place(x=10, y=220)
 b_carregar = Button(frameMeio, width=29, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_carregar.place(x=130, y=221)
@@ -116,7 +151,7 @@ b_carregar.place(x=130, y=221)
 img_add = Image.open('add.png')
 img_add = img_add.resize((20,20))
 img_add = ImageTk.PhotoImage(img_add)
-b_inserir = Button(frameMeio, image=img_add, width=95, text='  Adicionar'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_inserir = Button(frameMeio, command=inserir,image=img_add, width=95, text='  Adicionar'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_inserir.place(x=330, y=10)
 
 # Botao atualizar
