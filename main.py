@@ -89,8 +89,9 @@ def inserir():
 
 # Função para escolher imagem
 def escolher_imagem():
-
-
+    imagem = fd.askopenfilename()
+    imagem_string = imagem
+    
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
