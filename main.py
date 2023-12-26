@@ -55,6 +55,7 @@ global tree
 global imagem, imagem_string, l_imagem
 # Função inserir
 def inserir():
+    global imagem, imagem_string, l_imagem
     nome = e_nome.get()
     local = e_local.get()
     descricao = e_descricao.get()
@@ -75,13 +76,13 @@ def inserir():
 
     messagebox.showinfo('Sucesso', 'Os dados foram inseridos com sucesso')
 
-    nome.delete(0, 'end')
-    local.delete(0, 'end')
-    descricao.delete(0, 'end')
-    modelo.delete(0, 'end')
-    data.delete(0, 'end')
-    valor.delete(0, 'end')
-    serie.delete(0, 'end')
+    e_nome.delete(0, 'end')
+    e_local.delete(0, 'end')
+    e_descricao.delete(0, 'end')
+    e_modelo.delete(0, 'end')
+    e_cal.delete(0, 'end')
+    e_valor.delete(0, 'end')
+    e_serial.delete(0, 'end')
 
     for widget in frameMeio.winfo_children():
         widget.destroy()
@@ -203,8 +204,6 @@ l_qtd_.place(x=450, y=92)
 # tabela -----------------------------------------------------------
 
 def mostrar():
-
-
 
     # creating a treeview with dual scrollbars
     tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Data da compra','Valor da compra', 'Número de série']
