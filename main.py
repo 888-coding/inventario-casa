@@ -86,12 +86,23 @@ def inserir():
     for widget in frameMeio.winfo_children():
         widget.destroy()
 
+    mostrar()
 
 # Função para escolher imagem
+
 def escolher_imagem():
+    global imagem, imagem_string, l_imagem
     imagem = fd.askopenfilename()
     imagem_string = imagem
-    
+
+    # Abrindo imagem
+    imagem = Image.open(imagem)
+    imagem = imagem.resize((170, 170))
+    imagem = ImageTk.PhotoImage(imagem)
+
+    l_imagem = Label(frameMeio, image=imagem, bg=co1, fg=co4)
+    l_imagem.place(x=700, y=10)
+
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
@@ -145,7 +156,7 @@ e_serial.place(x=130,y=191)
 # Botao carregar
 l_carregar = Label(frameMeio, text='Imagem do item', anchor=NW, font='Ivy 10 bold', bg=co1, fg=co4)
 l_carregar.place(x=10, y=220)
-b_carregar = Button(frameMeio, width=29, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_carregar = Button(frameMeio, command=escolher_imagem, width=29, text='carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_carregar.place(x=130, y=221)
 
 # Botao inserir
