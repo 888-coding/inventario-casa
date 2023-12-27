@@ -84,8 +84,6 @@ def inserir():
     e_valor.delete(0, 'end')
     e_serial.delete(0, 'end')
 
-    for widget in frameMeio.winfo_children():
-        widget.destroy()
 
     mostrar()
 
@@ -206,9 +204,9 @@ l_qtd_.place(x=450, y=92)
 def mostrar():
 
     # creating a treeview with dual scrollbars
-    tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Data da compra','Valor da compra', 'Número de série']
+    tabela_head = ['#Item', 'Nome',  'Sala/Área', 'Descrição', 'Marca/Modelo', 'Data da compra', 'Valor da compra', 'Número de série']
 
-    lista_itens = []
+    lista_itens = ver_dados
 
 
 
@@ -227,7 +225,7 @@ def mostrar():
     frameBaixo.grid_rowconfigure(0, weight=12)
 
     hd=["center","center","center","center","center","center","center", 'center']
-    h=[40,150,100,160,130,100,100, 100]
+    h=[40, 150, 100, 160, 130, 100, 100, 100]
     n=0
 
     for col in tabela_head:
