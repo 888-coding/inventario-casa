@@ -206,7 +206,7 @@ def mostrar():
     # creating a treeview with dual scrollbars
     tabela_head = ['#Item', 'Nome',  'Sala/Área', 'Descrição', 'Marca/Modelo', 'Data da compra', 'Valor da compra', 'Número de série']
 
-    lista_itens = ver_dados
+    lista_itens = ver_dados()
 
 
 
