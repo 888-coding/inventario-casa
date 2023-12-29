@@ -112,7 +112,18 @@ def ver_imagem():
 
     valor = [int(treev_lista[0])]
 
-    print(valor)
+    item = ver_item(valor)
+
+    imagem = item[0][8]
+
+    # Abrindo Imagem
+    imagem = Image.open(imagem)
+    imagem = imagem.resize((170, 170))
+    imagem = ImageTk.PhotoImage(imagem)
+
+    l_imagem = Label(frameMeio, image=imagem, bg=co1, fg=co4)
+    l_imagem.place(x=700, y=10)
+
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
