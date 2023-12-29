@@ -102,6 +102,17 @@ def escolher_imagem():
     l_imagem = Label(frameMeio, image=imagem, bg=co1, fg=co4)
     l_imagem.place(x=700, y=10)
 
+# Funcao para "Ver item"
+def ver_imagem():
+    global imagem, imagem_string, l_imagem
+
+    treev_dados = tree.focus()
+    treev_dicionario = tree.item(treev_dados)
+    treev_lista = treev_dicionario['values']
+
+    valor = [int(treev_lista[0])]
+
+    print(valor)
 
 # Trabalhando no frame Cima ============================================
 # Abrindo Imagem
@@ -183,7 +194,7 @@ b_delete.place(x=330, y=90)
 img_item = Image.open('item.png')
 img_item = img_item.resize((20,20))
 img_item = ImageTk.PhotoImage(img_item)
-b_item = Button(frameMeio, image=img_item, width=95, text='  Ver item'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
+b_item = Button(frameMeio, command=ver_imagem, image=img_item, width=95, text='  Ver item'.upper(), compound=LEFT, anchor=NW, overrelief=RIDGE, font=('Ivy 8'), bg=co1, fg=co0)
 b_item.place(x=330, y=221)
 
 # Labels : Quantidade total e Valores ================================
@@ -202,7 +213,7 @@ l_qtd_.place(x=450, y=92)
 # tabela -----------------------------------------------------------
 
 def mostrar():
-
+    global tree
     # creating a treeview with dual scrollbars
     tabela_head = ['#Item', 'Nome',  'Sala/Área', 'Descrição', 'Marca/Modelo', 'Data da compra', 'Valor da compra', 'Número de série']
 
