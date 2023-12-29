@@ -45,3 +45,15 @@ Para mexer com imagens no programa em Python, deve-se usar a biblioteca "pillow"
 
     from PIL import Image, ImageTk
 
+Aprendizado 7:
+
+Para mexer com calendário tem a biblioteca seguinte : tkcalendar
+
+    from tkcalendar import Calendar, DateEntry
+
+Aprendizado 8:
+
+Existe o componente messagebox , que trabalha com janela pop-up.  Dentro da biblioteca tkinter.
+
+    from tkinter import Tk, StringVar, ttk, messagebox
+
