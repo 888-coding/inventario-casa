@@ -57,3 +57,8 @@ Existe o componente messagebox , que trabalha com janela pop-up.  Dentro da bibl
 
     from tkinter import Tk, StringVar, ttk, messagebox
 
+
+Dia 01/01/2024 
+Aprendizado concluído. 
+Falta aprender mais detalhes sobre cada biblioteca 
+sempre quando for necessário.
